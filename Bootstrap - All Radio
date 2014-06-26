@@ -1,0 +1,57 @@
+
+<div class="container">
+  <div class="well"> 
+   <div class="btn-group" data-toggle="buttons" id="radioopt">
+        <label class="btn btn-default">
+            <input type="radio" name="opts" id="option1" value="men"> Men
+        </label>
+        <label class="btn btn-default">
+            <input type="radio" name="opts" id="option2" value="female"> Female
+        </label>
+        <label class="btn btn-default">
+            <input type="radio" name="opts" id="option3" value="unknown"> Unknown
+        </label>
+   </div> 
+</div>
+   
+<button class="btn btn-success" id="isSelect">Is Select</button>
+<button class="btn btn-success" id="whichSelect">Which Select</button>
+<button class="btn btn-success" id="reset">Reset</button>
+<button class="btn btn-success" id="selectFemale">Select Female</button>  
+</div>
+
+
+
+$("#reset").on("click",function(){
+     $('input:radio[name=opts]').attr('checked', false);
+     $(".btn-group .btn").removeClass("active");
+});
+
+$('input:radio[name="opts"]').change(function(){
+  
+     alert($(this).val());   
+
+});
+$("#isSelect").click(function () {
+    if ($('input:radio[name=opts]').is(':checked')) {
+        alert("Yes Checked !");
+    } else {
+        alert("No Checked !");
+    }
+
+});
+
+$("#selectFemale").click(function () {
+    $('input:radio[name=opts]:nth(1)').attr('checked', true);
+ // $('input:radio[name=opts]')[1].checked = true;
+    $(".btn-group .btn").removeClass("active");
+    $(".btn-group .btn:nth(1)").addClass("active");
+});
+
+$("#whichSelect").click(function () {
+    alert($('input:radio[name=opts]:checked').val());
+});
+
+URL:
+
+http://jsfiddle.net/Behseini/4VvXM/
