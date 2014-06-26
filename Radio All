@@ -1,0 +1,46 @@
+
+<input type="radio" name="sex" value="Male">  Male</input>
+<input type="radio" name="sex" value="Female">  Female</input>
+<input type="radio" name="sex" value="Unknown">  Unknown</input>
+<br />
+<br />
+<br />
+<button class="btn btn-success" id="isSelect">Is Select</button>
+<button class="btn btn-success" id="whichSelect">Which Select</button>
+<button class="btn btn-success" id="reset">Reset</button>
+<button class="btn btn-success" id="selectFemale">Select Female</button>
+
+
+$("#deselect").on("click", function () {
+    $(".btn-group button").removeClass("active");
+});
+
+$('input:radio[name=sex]').change(function () {
+    alert($(this).val());
+});
+
+$("#whichSelect").click(function () {
+    alert($('input:radio[name=sex]:checked').val());
+});
+
+$("#isSelect").click(function () {
+    if ($('input:radio[name=sex]').is(':checked')) {
+        alert("Yes Checked !");
+    } else {
+        alert("No Checked !");
+    }
+
+});
+
+$("#reset").click(function () {
+    $('input:radio[name=sex]').attr('checked', false);
+});
+
+$("#selectFemale").click(function () {
+  $('input:radio[name=sex]:nth(1)').attr('checked', true);
+  //$('input:radio[name=sex]')[1].checked = true;
+});
+
+URL:
+
+http://jsfiddle.net/Behseini/xg73W/
