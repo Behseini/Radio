@@ -24,7 +24,7 @@
 
 $("#reset").on("click",function(){
      $('input:radio[name=opts]').attr('checked', false);
-     $(".btn-group .btn").removeClass("active");
+     $("#radioopt .btn").removeClass("active");
 });
 
 $('input:radio[name="opts"]').change(function(){
@@ -42,10 +42,9 @@ $("#isSelect").click(function () {
 });
 
 $("#selectFemale").click(function () {
-    $('input:radio[name=opts]:nth(1)').attr('checked', true);
- // $('input:radio[name=opts]')[1].checked = true;
-    $(".btn-group .btn").removeClass("active");
-    $(".btn-group .btn:nth(1)").addClass("active");
+    $('input:radio[name=opts]')[1].checked = true;
+    $("#radioopt .btn").removeClass("active");
+    $("#radioopt .btn:nth(1)").addClass("active");
 });
 
 $("#whichSelect").click(function () {
